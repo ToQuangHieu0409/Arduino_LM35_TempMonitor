@@ -5,8 +5,8 @@
 
 int adcValue;
 float nhietDo;
-int adcValues[2];
-float nhietDo[2];
+int adcValues[3];
+float nhietDo[3];
 char chuoi[30];
 
 void setup()
@@ -19,13 +19,20 @@ void loop() {
   int adcValue0 = analogRead(A0);
   float tempA0 = (adcValue0 * 500.0) / 1023.0;
 
+  int adcValue1 = analogRead(A1);
+  float tempA1 = (adcValue1 * 500.0) / 1023.0;
+
   int adcValue2 = analogRead(A2);
   float tempA2 = (adcValue2 * 500.0) / 1023.0;
 
-  Serial.print("Nhiet do A0: ");
+  Serial.print("{");
+  Serial.print("\"tempA0\": ");
   Serial.print(tempA0);
-  Serial.print(" | Nhiet do A2: ");
-  Serial.println(tempA2);
+  Serial.print(", \"tempA1\": ");
+  Serial.print(tempA1);
+  Serial.print(", \"tempA2\": ");
+  Serial.print(tempA2);
+  Serial.println("}");
 
   delay(1000);
 }
