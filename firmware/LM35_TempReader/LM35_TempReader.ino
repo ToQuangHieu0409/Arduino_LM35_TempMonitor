@@ -15,15 +15,24 @@ void setup()
   delay(100);
 }
 
-void loop()
-{
-  adcValues[0] = analogRead(A0);
-  nhietDo[0] = (adcValues[0] * 500.0) / 1023.0;
-  adcValues[1] = analogRead(A1);
-  nhietDo[1] = (adcValues[1] * 500.0) / 1023.0;
-  adcValues[2] = analogRead(A2);
-  nhietDo[2] = (adcValues[2] * 500.0) / 1023.0;
-  sprintf(chuoi, "%d,%d,%d\n", (int)nhietDo[0], (int)nhietDo[1], (int)nhietDo[2]);
-  Serial.print(chuoi);
-  delay(100);
+void loop() {
+  int adcValue0 = analogRead(A0);
+  float tempA0 = (adcValue0 * 500.0) / 1023.0;
+
+  int adcValue1 = analogRead(A1);
+  float tempA1 = (adcValue1 * 500.0) / 1023.0;
+
+  int adcValue2 = analogRead(A2);
+  float tempA2 = (adcValue2 * 500.0) / 1023.0;
+
+  Serial.print("{");
+  Serial.print("\"tempA0\": ");
+  Serial.print(tempA0);
+  Serial.print(", \"tempA1\": ");
+  Serial.print(tempA1);
+  Serial.print(", \"tempA2\": ");
+  Serial.print(tempA2);
+  Serial.println("}");
+
+  delay(1000);
 }
