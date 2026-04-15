@@ -48,3 +48,7 @@ Arduino_LM35_TempMonitor/
 
 Tô Quang Hiếu - MSSV: N23DCCI023 (Chủ Repository)
 Lê Thanh Tú - MSSV: N23DCCI075 (Collaborator)
+
+## 7. Tac gia
+
+Tô Quang Hiếu(https://toquanghieu0409.github.io./) - Sinh vien PTIT
